@@ -1,0 +1,13 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Zencai · Solicitud de amistad</title>
+<style>body{font-family:-apple-system,Segoe UI,Roboto,sans-serif;max-width:480px;margin:0 auto;padding:48px 24px;color:#011631;text-align:center;line-height:1.5}h1{font-size:24px}a.btn{display:block;margin:24px auto 12px;padding:16px;border-radius:30px;background:#E87C48;color:#fff;font-weight:800;text-decoration:none;letter-spacing:1px}p.s{font-size:14px;color:#667}</style></head><body>
+<h1>Te invitan a Zencai</h1>
+<p>Abre el enlace en la app para ver el perfil y solicitar la amistad.</p>
+<a class="btn" id="open" href="#">ABRIR EN ZENCAI</a>
+<p class="s">¿Aún no tienes la app? Instala Zencai y, después, vuelve a pulsar este enlace.<br>Código de amigo: <b id="code"></b></p>
+<script>
+var c=new URLSearchParams(location.search).get('c')||'';
+var u='zencai://amigo/'+encodeURIComponent(c);
+document.getElementById('code').textContent=c;
+document.getElementById('open').href=u;
+if(c){setTimeout(function(){location.href=u;},400);}
+</script></body></html>
